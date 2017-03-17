@@ -58,6 +58,13 @@ public class MarkupCalculator {
 		return this.materialsType.getMarkupVal();
 	}
 	
+	private double roundToTwoDecimalPlaces(double d) {
+		double result = d*100;
+		result = Math.round(result);
+		result = result/100;
+		return result;
+	}
+	
 	public double getFinalCost() {
 		double price; 
 		
@@ -65,7 +72,7 @@ public class MarkupCalculator {
 		price += calculateFlatMarkup()*calculateMarkupFromPeople();
 		price += calculateFlatMarkup()*calculateMarkupFromMaterials();
 		
-		return price;
+		return roundToTwoDecimalPlaces(price);
 	}
 	
 	
