@@ -16,7 +16,7 @@ public class TestMarkupCalculator {
 		calculator.setPeopleNeeded(3);
 		calculator.setMaterialsType(MATERIALS.FOOD);
 		
-		assertEquals(1591.58, calculator.getFinalCost(), 0.001);
+		assertEquals(1591.58, calculator.getFinalCost(), 0.0001);
 	}
 	
 	@Test
@@ -27,7 +27,7 @@ public class TestMarkupCalculator {
 		calculator.setPeopleNeeded(1);
 		calculator.setMaterialsType(MATERIALS.PHARMACEUTICALS);
 		
-		assertEquals(6199.81, calculator.getFinalCost(), 0.001);
+		assertEquals(6199.81, calculator.getFinalCost(), 0.000001);
 	}
 	
 	@Test
@@ -38,7 +38,7 @@ public class TestMarkupCalculator {
 		calculator.setPeopleNeeded(4);
 		calculator.setMaterialsType(MATERIALS.OTHER);
 		
-		assertEquals(13707.63, calculator.getFinalCost(), 0.001);
+		assertEquals(13707.63, calculator.getFinalCost(), 0.0001);
 	}
 	
 	@Test
@@ -51,7 +51,7 @@ public class TestMarkupCalculator {
 
 		double expected = 105.00;
 		
-		assertEquals(expected, calculator.getFinalCost(), 0.001);
+		assertEquals(expected, calculator.getFinalCost(), 0.0001);
 	}
 	
 }
