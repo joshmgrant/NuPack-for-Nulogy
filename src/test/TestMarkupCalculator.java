@@ -75,4 +75,11 @@ public class TestMarkupCalculator {
 		assertEquals("$13,707.63", calculator.getFinalCostAsString());
 	}
 	
+	@Test
+	public void testPharmaceuticalsFullName() {
+MarkupCalculator calculator = new MarkupCalculator("5,432.00", "1", "Pharmaceuticals");
+		
+		assertEquals("$6,199.81", calculator.getFinalCostAsString());
+	}
+	
 }
