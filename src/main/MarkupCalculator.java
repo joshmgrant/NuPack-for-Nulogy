@@ -41,6 +41,10 @@ public class MarkupCalculator {
 	}
 	
 	private double calculateMarkupFromPeople() {
+		if (this.peopleNeeded <= 0){
+			return 0.0;
+		}
+		
 		double peopleMarkup = 1.0;
 		
 		for (int i = 0; i < this.peopleNeeded; i++) {
