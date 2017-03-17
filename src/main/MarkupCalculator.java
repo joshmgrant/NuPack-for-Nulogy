@@ -1,32 +1,30 @@
 package main;
 
-import java.math.BigDecimal;
-
 public class MarkupCalculator {
 
-	private BigDecimal basePrice;
+	private double basePrice;
 	private int peopleNeeded;
 	
 	public enum MATERIALS {
-		FOOD(new BigDecimal(0.13)),
-		PHARMACEUTICALS(new BigDecimal(0.075)),
-		ELECTRONICS(new BigDecimal(0.02)),
-		OTHER(new BigDecimal(0.0));
+		FOOD(0.13),
+		PHARMACEUTICALS(0.075),
+		ELECTRONICS(0.02),
+		OTHER(0.0);
 		
-		private BigDecimal markup;
+		private double markup;
 
-	    MATERIALS(BigDecimal markup) {
+	    MATERIALS(double markup) {
 	        this.markup = markup;
 	    }
 
-	    public BigDecimal getMarkupVal() {
+	    public double getMarkupVal() {
 	        return markup;
 	    }
 	}
 	
 	private MATERIALS materialsType;
 	
-	public void setBasePrice(BigDecimal basePrice) {
+	public void setBasePrice(double basePrice) {
 		this.basePrice = basePrice;
 	}
 
@@ -38,37 +36,32 @@ public class MarkupCalculator {
 		this.materialsType = type;
 	}
 	
-	private BigDecimal calculateFlatMarkup() {
-		BigDecimal flatMarkup = new BigDecimal(1.05); 
-		return this.basePrice.multiply(flatMarkup);
+	private double calculateFlatMarkup() {
+		return this.basePrice*1.05;
 	}
 	
-	private BigDecimal calculateMarkupFromPeople() {
+	private double calculateMarkupFromPeople() {
 		if (this.peopleNeeded <= 0){
-			return new BigDecimal(0.0);
+			return 0.0;
 		}
 		
-		BigDecimal peopleMarkup = new BigDecimal(1.0);
-		BigDecimal markupPerPerson = new BigDecimal(0.012);
+		double peopleMarkup = 1.0;
 		
 		for (int i = 0; i < this.peopleNeeded; i++) {
-			peopleMarkup.multiply(markupPerPerson);
+			peopleMarkup *= (0.012);
 		}
 		
 		return peopleMarkup;
 	}
 	
-	private BigDecimal calculateMarkupFromMaterials() {
+	private double calculateMarkupFromMaterials() {
 		return this.materialsType.getMarkupVal();
 	}
 	
-	public BigDecimal getFinalCost() {
-		BigDecimal price; 
-		BigDecimal one = new BigDecimal(1.0);
+	public double getFinalCost() {
+		double price; 
 		
-		price = calculateFlatMarkup();
-		price.multiply(one.add(calculateMarkupFromPeople()));
-		price.multiply(one.add(calculateMarkupFromMaterials()));
+		price = calculateFlatMarkup()*(1.00 + calculateMarkupFromPeople())*(1.00 + calculateMarkupFromMaterials());
 		
 		return price;
 	}
