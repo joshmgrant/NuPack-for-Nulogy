@@ -1,9 +1,15 @@
 package main;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class MarkupCalculator {
 
 	private double basePrice;
 	private int peopleNeeded;
+	
+	private String peopleNeededAsString;
+	private String materialsTypeAsString;
 	
 	public enum MATERIALS {
 		FOOD(0.13),
@@ -29,15 +35,32 @@ public class MarkupCalculator {
 	}
 	
 	public void setBasePriceAsString(String basePrice){
-		
+		basePrice = basePrice.replace("$", "");
+		basePrice = basePrice.replace(",", "");
+		this.basePrice = Double.parseDouble(basePrice);
 	}
 	
 	public void setPeopleNeededAsString(String peopleNeeded) {
-		
+		this.peopleNeeded = Integer.parseInt(peopleNeeded);
 	}
 	
 	public void setMaterialsTypeAsString(String type) {
+		type = type.toLowerCase();
 		
+		switch(type) {
+			case "food":
+				this.materialsType = MATERIALS.FOOD;
+				break;
+			case "pharmaceuticals": case "drugs":
+				this.materialsType = MATERIALS.PHARMACEUTICALS;
+				break;
+			case "electronics":
+				this.materialsType = MATERIALS.ELECTRONICS;
+				break;
+			default:
+				this.materialsType = MATERIALS.OTHER;
+				break;
+		}
 	}
 
 	public void setPeopleNeeded(int peopleNeeded) {
@@ -88,7 +111,10 @@ public class MarkupCalculator {
 	}
 	
 	public String getFinalCostAsString() {
-		return "";
+		double finalCost = getFinalCost();
+		
+		NumberFormat formatter = NumberFormat.getCurrencyInstance(Locale.CANADA);
+		return formatter.format(finalCost);
 	}
 
 	
