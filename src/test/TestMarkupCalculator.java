@@ -105,4 +105,12 @@ public class TestMarkupCalculator {
 		assertEquals(expected, calculator.getFinalCost());
 	}
 	
+	@Test
+	public void testOnlyBasePriceWithFormatting() {
+		MarkupCalculator calculator = new MarkupCalculator("100.00", "0 people", "");
+		
+		String expected = "$105.00"; 
+		
+		assertEquals(expected, calculator.getFinalCost());
+	}
 }
