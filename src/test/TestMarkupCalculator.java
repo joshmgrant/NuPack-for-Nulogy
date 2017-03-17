@@ -16,7 +16,7 @@ public class TestMarkupCalculator {
 		calculator.setPeopleNeeded(1);
 		calculator.setMaterialsType(MaterialsType.PHARMACEUTICALS);
 		
-		assertEquals(calculator.getFinalCost(), 6199.81, 0.001);
+		assertEquals(6199.81, calculator.getFinalCost(), 0.001);
 	}
 	
 
