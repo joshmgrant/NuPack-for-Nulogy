@@ -9,7 +9,18 @@ import main.MarkupCalculator.MaterialsType;
 public class TestMarkupCalculator {
 	
 	@Test
-	public void testExampleCalculation() {
+	public void testExample1Calculation() {
+		MarkupCalculator calculator = new MarkupCalculator();
+		
+		calculator.setBasePrice(1299.99); 
+		calculator.setPeopleNeeded(3);
+		calculator.setMaterialsType(MaterialsType.FOOD);
+		
+		assertEquals(1591.58, calculator.getFinalCost(), 0.001);
+	}
+	
+	@Test
+	public void testExample2Calculation() {
 		MarkupCalculator calculator = new MarkupCalculator();
 		
 		calculator.setBasePrice(5432.00); 
@@ -19,5 +30,15 @@ public class TestMarkupCalculator {
 		assertEquals(6199.81, calculator.getFinalCost(), 0.001);
 	}
 	
-
+	@Test
+	public void testExample3Calculation() {
+		MarkupCalculator calculator = new MarkupCalculator();
+		
+		calculator.setBasePrice(12456.95); 
+		calculator.setPeopleNeeded(4);
+		calculator.setMaterialsType(MaterialsType.OTHER);
+		
+		assertEquals(13707.63, calculator.getFinalCost(), 0.001);
+	}
+	
 }
