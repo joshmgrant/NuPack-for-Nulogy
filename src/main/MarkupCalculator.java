@@ -45,10 +45,10 @@ public class MarkupCalculator {
 			return 0.0;
 		}
 		
-		double peopleMarkup = 1.0;
+		double peopleMarkup = 0.0;
 		
 		for (int i = 0; i < this.peopleNeeded; i++) {
-			peopleMarkup *= (0.012);
+			peopleMarkup += 0.012;
 		}
 		
 		return peopleMarkup;
