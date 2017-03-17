@@ -62,8 +62,8 @@ public class MarkupCalculator {
 		double price; 
 		
 		price = calculateFlatMarkup();
-		price += this.basePrice*calculateMarkupFromPeople();
-		price += this.basePrice*calculateMarkupFromMaterials();
+		price += price*calculateMarkupFromPeople();
+		price += price*calculateMarkupFromMaterials();
 		
 		return price;
 	}
