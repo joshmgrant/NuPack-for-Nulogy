@@ -27,6 +27,18 @@ public class MarkupCalculator {
 	public void setBasePrice(double basePrice) {
 		this.basePrice = basePrice;
 	}
+	
+	public void setBasePriceAsString(String basePrice){
+		
+	}
+	
+	public void setPeopleNeededAsString(String peopleNeeded) {
+		
+	}
+	
+	public void setMaterialsTypeAsString(String type) {
+		
+	}
 
 	public void setPeopleNeeded(int peopleNeeded) {
 		this.peopleNeeded = peopleNeeded;
