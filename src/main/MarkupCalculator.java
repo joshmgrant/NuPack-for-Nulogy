@@ -87,7 +87,9 @@ public class MarkupCalculator {
 		return roundToTwoDecimalPlaces(price);
 	}
 	
-	
+	public String getFinalCostAsString() {
+		return "";
+	}
 
 	
 }

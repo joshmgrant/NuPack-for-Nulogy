@@ -62,7 +62,7 @@ public class TestMarkupCalculator {
 		calculator.setPeopleNeededAsString("3");
 		calculator.setMaterialsTypeAsString("food");
 		
-		assertEquals(1591.58, calculator.getFinalCost(), 0.0001);
+		assertEquals("$1,591.58", calculator.getFinalCostAsString());
 	}
 	
 	@Test
@@ -73,7 +73,7 @@ public class TestMarkupCalculator {
 		calculator.setPeopleNeededAsString("1");
 		calculator.setMaterialsTypeAsString("drugs");
 		
-		assertEquals(6199.81, calculator.getFinalCost(), 0.000001);
+		assertEquals("$6,199.81", calculator.getFinalCostAsString());
 	}
 	
 	@Test
@@ -84,7 +84,7 @@ public class TestMarkupCalculator {
 		calculator.setPeopleNeededAsString("4");
 		calculator.setMaterialsTypeAsString("books");
 		
-		assertEquals(13707.63, calculator.getFinalCost(), 0.0001);
+		assertEquals("$13,707.63", calculator.getFinalCostAsString());
 	}
 	
 }
