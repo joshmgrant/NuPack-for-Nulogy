@@ -61,9 +61,7 @@ public class MarkupCalculator {
 	public double getFinalCost() {
 		double price; 
 		
-		price = calculateFlatMarkup();
-		price += price*calculateMarkupFromPeople();
-		price += price*calculateMarkupFromMaterials();
+		price = calculateFlatMarkup()*(1.00 + calculateMarkupFromPeople())*(1.00 + calculateMarkupFromMaterials());
 		
 		return price;
 	}
