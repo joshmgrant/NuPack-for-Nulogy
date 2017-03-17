@@ -41,4 +41,17 @@ public class TestMarkupCalculator {
 		assertEquals(13707.63, calculator.getFinalCost(), 0.001);
 	}
 	
+	@Test
+	public void testOnlyFlatMarkup() {
+		MarkupCalculator calculator = new MarkupCalculator();
+		
+		calculator.setBasePrice(100.00); 
+		calculator.setPeopleNeeded(0);
+		calculator.setMaterialsType(MATERIALS.OTHER);
+
+		double expected = 105.00;
+		
+		assertEquals(expected, calculator.getFinalCost(), 0.001);
+	}
+	
 }
