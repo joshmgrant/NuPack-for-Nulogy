@@ -96,4 +96,13 @@ public class TestMarkupCalculator {
 		assertEquals("$1,591.58", calculator.getFinalCostAsString());
 	}
 	
+	@Test
+	public void testElectronicsMaterialsCase() {
+		MarkupCalculator calculator = new MarkupCalculator("100.00", "0", "electronics");
+		
+		String expected = "$107.10"; 
+		
+		assertEquals(expected, calculator.getFinalCostAsString());
+	}
+	
 }
