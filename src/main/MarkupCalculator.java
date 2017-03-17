@@ -113,7 +113,7 @@ public class MarkupCalculator {
 		return result;
 	}
 	
-	public double getFinalCost() {
+	public double calculateFinalCost() {
 		double price; 
 		
 		price = calculateFlatMarkup();
@@ -123,8 +123,8 @@ public class MarkupCalculator {
 		return roundToTwoDecimalPlaces(price);
 	}
 	
-	public String getFinalCostAsString() {
-		double finalCost = getFinalCost();
+	public String getFinalCost() {
+		double finalCost = calculateFinalCost();
 		
 		NumberFormat formatter = NumberFormat.getCurrencyInstance(Locale.CANADA);
 		return formatter.format(finalCost);
