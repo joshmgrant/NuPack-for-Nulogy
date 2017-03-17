@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import main.MarkupCalculator;
-import main.MarkupCalculator.MaterialsType;
+import main.MarkupCalculator.MATERIALS;
 
 public class TestMarkupCalculator {
 	
@@ -14,7 +14,7 @@ public class TestMarkupCalculator {
 		
 		calculator.setBasePrice(1299.99); 
 		calculator.setPeopleNeeded(3);
-		calculator.setMaterialsType(MaterialsType.FOOD);
+		calculator.setMaterialsType(MATERIALS.FOOD);
 		
 		assertEquals(1591.58, calculator.getFinalCost(), 0.001);
 	}
@@ -25,7 +25,7 @@ public class TestMarkupCalculator {
 		
 		calculator.setBasePrice(5432.00); 
 		calculator.setPeopleNeeded(1);
-		calculator.setMaterialsType(MaterialsType.PHARMACEUTICALS);
+		calculator.setMaterialsType(MATERIALS.PHARMACEUTICALS);
 		
 		assertEquals(6199.81, calculator.getFinalCost(), 0.001);
 	}
@@ -36,7 +36,7 @@ public class TestMarkupCalculator {
 		
 		calculator.setBasePrice(12456.95); 
 		calculator.setPeopleNeeded(4);
-		calculator.setMaterialsType(MaterialsType.OTHER);
+		calculator.setMaterialsType(MATERIALS.OTHER);
 		
 		assertEquals(13707.63, calculator.getFinalCost(), 0.001);
 	}

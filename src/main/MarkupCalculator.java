@@ -5,7 +5,7 @@ public class MarkupCalculator {
 	private double basePrice;
 	private int peopleNeeded;
 	
-	public enum MaterialsType {
+	public enum MATERIALS {
 		FOOD(1.13),
 		PHARMACEUTICALS(1.075),
 		ELECTRONICS(1.02),
@@ -13,7 +13,7 @@ public class MarkupCalculator {
 		
 		private double markup;
 
-	    MaterialsType(double markup) {
+	    MATERIALS(double markup) {
 	        this.markup = markup;
 	    }
 
@@ -22,7 +22,7 @@ public class MarkupCalculator {
 	    }
 	}
 	
-	private MaterialsType materialsType;
+	private MATERIALS materialsType;
 	
 	public void setBasePrice(double basePrice) {
 		this.basePrice = basePrice;
@@ -32,7 +32,7 @@ public class MarkupCalculator {
 		this.peopleNeeded = peopleNeeded;
 	}
 	
-	public void setMaterialsType(MaterialsType type){
+	public void setMaterialsType(MATERIALS type){
 		this.materialsType = type;
 	}
 	
