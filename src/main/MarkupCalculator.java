@@ -54,6 +54,9 @@ public class MarkupCalculator {
 	}
 	
 	public void setPeopleNeededAsString(String peopleNeeded) {
+		peopleNeeded = peopleNeeded.replace("people", "");
+		peopleNeeded = peopleNeeded.replace("person", "");
+		peopleNeeded = peopleNeeded.trim();
 		this.peopleNeeded = Integer.parseInt(peopleNeeded);
 	}
 	

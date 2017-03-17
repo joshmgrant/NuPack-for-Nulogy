@@ -56,21 +56,21 @@ public class TestMarkupCalculator {
 
 	@Test
 	public void testExample1CalculationWithStrings() {
-		MarkupCalculator calculator = new MarkupCalculator("$1,299.99", "3", "food");
+		MarkupCalculator calculator = new MarkupCalculator("$1,299.99", "3 people", "food");
 		
 		assertEquals("$1,591.58", calculator.getFinalCost());
 	}
 	
 	@Test
 	public void testExample2CalculationWithStrings() {
-		MarkupCalculator calculator = new MarkupCalculator("5,432.00", "1", "drugs");
+		MarkupCalculator calculator = new MarkupCalculator("5,432.00", "1 person", "drugs");
 		
 		assertEquals("$6,199.81", calculator.getFinalCost());
 	}
 	
 	@Test
 	public void testExample3CalculationWithStrings() {
-		MarkupCalculator calculator = new MarkupCalculator("12,456.95", "4", "books");
+		MarkupCalculator calculator = new MarkupCalculator("12,456.95", "4 people", "books");
 		
 		assertEquals("$13,707.63", calculator.getFinalCost());
 	}
