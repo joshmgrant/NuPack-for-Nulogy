@@ -6,10 +6,10 @@ public class MarkupCalculator {
 	private int peopleNeeded;
 	
 	public enum MATERIALS {
-		FOOD(1.13),
-		PHARMACEUTICALS(1.075),
-		ELECTRONICS(1.02),
-		OTHER(1.0);
+		FOOD(0.13),
+		PHARMACEUTICALS(0.075),
+		ELECTRONICS(0.02),
+		OTHER(0.0);
 		
 		private double markup;
 
@@ -44,7 +44,7 @@ public class MarkupCalculator {
 		double peopleMarkup = 1.0;
 		
 		for (int i = 0; i < this.peopleNeeded; i++) {
-			peopleMarkup *= (1.012);
+			peopleMarkup *= (0.012);
 		}
 		
 		return peopleMarkup;
