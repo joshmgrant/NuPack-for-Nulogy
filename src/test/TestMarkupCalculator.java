@@ -77,9 +77,23 @@ public class TestMarkupCalculator {
 	
 	@Test
 	public void testPharmaceuticalsFullName() {
-MarkupCalculator calculator = new MarkupCalculator("5,432.00", "1", "Pharmaceuticals");
+		MarkupCalculator calculator = new MarkupCalculator("5,432.00", "1", "Pharmaceuticals");
 		
 		assertEquals("$6,199.81", calculator.getFinalCostAsString());
+	}
+	
+	@Test
+	public void testBasePriceMissingDollarSign() {
+		MarkupCalculator calculator = new MarkupCalculator("1,299.99", "3", "food");
+		
+		assertEquals("$1,591.58", calculator.getFinalCostAsString());
+	}
+	
+	@Test
+	public void testBasePriceMissingComma() {
+		MarkupCalculator calculator = new MarkupCalculator("$1299.99", "3", "food");
+		
+		assertEquals("$1,591.58", calculator.getFinalCostAsString());
 	}
 	
 }
