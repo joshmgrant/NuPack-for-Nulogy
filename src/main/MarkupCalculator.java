@@ -4,13 +4,13 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public class MarkupCalculator {
-
+	
+	/**
+	 * Members
+	 */
 	private double basePrice;
 	private int peopleNeeded;
-	
-	private String peopleNeededAsString;
-	private String materialsTypeAsString;
-	
+		
 	public enum MATERIALS {
 		FOOD(0.13),
 		PHARMACEUTICALS(0.075),
@@ -30,6 +30,19 @@ public class MarkupCalculator {
 	
 	private MATERIALS materialsType;
 	
+	/**
+	 * Constructors
+	 */
+	public MarkupCalculator() {
+		super();
+	}
+	
+	public MarkupCalculator(String basePrice, String peopleNeeded, String materialsType) {
+		setBasePriceAsString(basePrice);
+		setPeopleNeededAsString(peopleNeeded);
+		setMaterialsTypeAsString(materialsType);
+	}
+	
 	public void setBasePrice(double basePrice) {
 		this.basePrice = basePrice;
 	}
@@ -37,7 +50,7 @@ public class MarkupCalculator {
 	public void setBasePriceAsString(String basePrice){
 		basePrice = basePrice.replace("$", "");
 		basePrice = basePrice.replace(",", "");
-		this.basePrice = Double.parseDouble(basePrice);
+		setBasePrice(Double.parseDouble(basePrice));
 	}
 	
 	public void setPeopleNeededAsString(String peopleNeeded) {
