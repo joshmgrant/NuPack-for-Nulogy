@@ -1,22 +1,30 @@
 <project name="Test-NuPack">
-  <property name="bin" value="bin/"/>
-  <property name="src" value="src/"/>
+  <property name="src" value="src"/>
+  <property name="tests" value="src/test"/>
+  <property name="bin" value="bin" />
 
   <path id="classpath.test">
+  	<pathelement location="${src}" />
   	<pathelement location="${bin}" />
-	<pathelement location="${src}" />
     <pathelement location="lib/junit.jar" />
     <pathelement location="lib/org.hamcrest.core_1.3.0.v201303031735.jar" />
   </path>
 
-  <target name="test">
+  <target name="compile" >
+	<mkdir dir="${bin}" />
+  	<javac destdir="${bin}" srcdir="${src}">
+  	  <classpath refid="classpath.test" />                 
+  	</javac>
+  </target>
+	
+  <target name="test" depends="compile">
     <junit printsummary="on" haltonfailure="yes" fork="true">
         <classpath>
           <path refid="classpath.test"/>
         </classpath>
         <formatter type="brief" usefile="false" />
         <batchtest>
-            <fileset dir="${src}" includes="**/*Test*.java" />
+            <fileset dir="${tests}" includes="**/Test*.java" />
         </batchtest>
     </junit>
   </target>
