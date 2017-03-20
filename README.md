@@ -12,3 +12,5 @@ You can get Eclipse Neon [here](http://www.eclipse.org/downloads/packages/eclips
 You can get the JUnit 4 jar [here](https://github.com/junit-team/junit4/wiki/Download-and-Install) if you need it to be added to your libraries/sourcepath. 
 
 Generally speaking I used Eclipse as both the writing environment for writing code and building the application and running tests. 
+
+I also included an ant build file using the latest version of ant (1.10.1). You can get this version of ant from [here](https://ant.apache.org/bindownload.cgi)
