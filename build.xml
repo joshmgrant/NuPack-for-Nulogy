@@ -1,4 +1,4 @@
-<project name="junit-example">
+<project name="Test-NuPack">
   <property name="main.build.dir" value="build/main"/>
   <property name="main.src.dir" value="src/main/"/>
   <property name="test.build.dir" value="build/test"/>
@@ -7,6 +7,7 @@
   <path id="classpath.test">
     <pathelement location="lib/junit.jar"/>
     <pathelement location="${main.build.dir}"/>
+  	<pathelement location="${test.build.dir}"/>
   </path>
 
   <target name="compile">
@@ -29,7 +30,7 @@
         </classpath>
         <formatter type="brief" usefile="false" />
         <batchtest>
-            <fileset dir="${test.src.dir}" includes="**/*Test.java" />
+            <fileset dir="${test.src.dir}" includes="**/Test*.java" />
         </batchtest>
     </junit>
   </target>
